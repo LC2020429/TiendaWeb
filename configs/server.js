@@ -5,6 +5,8 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { dbConnection } from "./mongo.js";
+import authRoutes from "../src/auth/auth.routes.js";
+import userRoutes from "../src/user/user.routes.js";
 
 const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
@@ -13,6 +15,11 @@ const middlewares = (app) => {
   app.use(helmet());
   app.use(morgan("dev"));
 };
+
+const routes =  (app) =>{
+  app.use("/scholarSystem/v1/auth", authRoutes);
+  app.use("/scholarSystem/v1/user", userRoutes);
+}
 
 const conectarDB = async () => {
   try {

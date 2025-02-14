@@ -30,7 +30,7 @@ const userSchema = Schema ({
     role:{
         type: String,
         required: true, 
-        enum: ['user', 'admin'],
+        enum: ['USER', 'ADMIN'],
     },
     porfilePicture:{
         type: String,
