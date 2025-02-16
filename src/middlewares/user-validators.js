@@ -1,6 +1,6 @@
 import { body, param } from "express-validator";
 import {
-  correoExist,
+  emailExist,
   userExists,
   usernameExists,
 } from "../helpers/db-validators.js";
@@ -13,7 +13,7 @@ export const registerValidatorAdmin = [
   body("lastName").notEmpty().withMessage("Username is required"),
   body("email").notEmpty().withMessage("Email is required"),
   body("email").isEmail().withMessage("Invalid email"),
-  body("email").custom(correoExist),
+  body("email").custom(emailExist),
   body("username").custom(usernameExists),
   body("password")
     .isStrongPassword({
@@ -36,7 +36,7 @@ export const registerValidator = [
   body("lastName").notEmpty().withMessage("Username is required"),
   body("email").notEmpty().withMessage("Email is required"),
   body("email").isEmail().withMessage("Is not a valid email"),
-  body("email").custom(correoExist),
+  body("email").custom(emailExist),
   body("role").default("Estudiante"),
   body("username").custom(usernameExists),
   body("password")

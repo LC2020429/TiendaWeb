@@ -1,4 +1,4 @@
-import { Schema, model, version } from 'mongoose';
+import { Schema, model } from 'mongoose';
 const userSchema = Schema ({
     name: {
         type: String,
@@ -30,7 +30,7 @@ const userSchema = Schema ({
     role:{
         type: String,
         required: true, 
-        enum: ['user', 'admin'],
+        enum: ['USER', 'ADMIN'],
     },
     porfilePicture:{
         type: String,
