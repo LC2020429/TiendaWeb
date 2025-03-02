@@ -1,53 +1,55 @@
-import { Schema, model, version } from 'mongoose';
-const userSchema = Schema ({
-    name: {
+import { Schema, model } from "mongoose";
+
+const userSchema = new Schema(
+  {
+    apellidos: {
+      type: String,
+      required: [true, "El apellido es obligatorio"],
+      maxLength: [50, "El apellido no puede tener más de 50 caracteres"],
+    },
+    nombres: {
         type: String,
-        required: [true, 'Name is required'],
-        maxLength: [30, 'Name cannot exceed 30 characters']
+        required: [true, "Los nombres son obligatorios"],
+        maxLength: [50, "Los nombre no pueden exceder los 50 caracteres"],
     },
-    lastName: {
-        type: String,
-        required: [true, 'Last name is required'],
-        maxLength: [30, 'Last name cannot exceed 30 characters']
+    userName: {
+      type: String,
+      required: [true, "El nombre de usuario es obligatorio"],
+      maxLength: [50, "El nombre de usuario no puede tener más de 50 caracteres"],
     },
-    userName:{
-        type: String,
-        required: [true, 'User name is required'],
+    email: {
+      type: String,
+      required: [true, "El correo es obligatorio"],
+      unique: true,
     },
-    email:{
-        type: String, 
-        requiered: [true, 'Email is required'],
-        unique: true,
-    }, 
-    password:{
-        type: String,
-        required: [true, 'Password is required'],
+    profilePicture: {
+      type: String,
     },
-    phoneNumber:{
-        type: String,
-        required: [true, 'Phone number is required'],   
+    password: {
+      type: String,
+      required: [true, "La contraseña es obligatoria"],
     },
-    role:{
-        type: String,
-        required: true, 
-        enum: ['user', 'admin'],
+    role: {
+      type: String,
+      required: true,
+      default: "USER",
+      enum: ["ADMIN", "USER"],
     },
-    porfilePicture:{
-        type: String,
+    status: {
+      type: Boolean,
+      default: true,
     },
-    status:{
-        type: Boolean,
-        default: true,
-    },
-},
-{
-    versionKey: false,
+  },
+  {
     timestamps: true,
-}
+    versionKey: false,
+  }
 );
-userSchema.methods.toJSON = function(){
-    const { __id, password, ...user } = this.toObject();
-    user.uid = __id;
-    return user;
-}
-export default model('User', userSchema);
+
+userSchema.methods.toJSON = function () {
+  const { password, _id, ...user } = this.toObject();
+  user.uid = _id;
+  return user;
+};
+
+export default model("User", userSchema);

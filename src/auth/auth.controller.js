@@ -5,67 +5,61 @@ import { generateJWT } from "../helpers/generate-jwt.js";
 export const register = async (req, res) => {
   try {
     const data = req.body;
-    let profilePicture = req.file ? req.file.filename : null;
-    const encryptedPassword = await hash(data.password);
-    data.password = encryptedPassword;
-    data.profilePicture = profilePicture;
+    data.password = await hash(data.password);
 
     const user = await User.create(data);
 
     return res.status(201).json({
-      message: "User has been created",
-      name: user.name,
+      message: "Usuario registrado con éxito",
+      uid: user.id,
+      userName: user.userName,
       email: user.email,
     });
   } catch (err) {
     return res.status(500).json({
-      message: "User registration failed",
+      message: "Error en el registro de usuario",
       error: err.message,
     });
   }
 };
 
 export const login = async (req, res) => {
-  console.log("Request body:", req.body); 
-
-  const { email, username, password } = req.body;
-
-  if (!password) {
-    return res.status(400).json({
-      message: "Password was not send",
-    });
-  }
-
+  const { email, userName, password } = req.body;
   try {
     const user = await User.findOne({
-      $or: [{ correo: email }, { userName: username }],
+      $or: [{ email: email }, { userName: userName }],
     });
 
-    if (!user) {
+    if (!user || !user.status) {
       return res.status(400).json({
-        message: "invalid credentials",
-        error: "User or email not found",
+        message: "Credenciales inválidas",
+        error: "No existe el usuario o ha sido deshabilitado",
       });
     }
 
     const validPassword = await verify(user.password, password);
-
     if (!validPassword) {
       return res.status(400).json({
-        message: "invalid credentials",
-        error: "Wrong password",
+        message: "Credenciales inválidas",
+        error: "Contraseña incorrecta",
       });
     }
 
     const token = await generateJWT(user.id);
 
     return res.status(200).json({
-      message: "Login successful",
-      username: user.userName, 
+      message: "Inicio de sesión exitoso",
+      userDetails: {
+        uid: user.id,
+        token,
+        userName: user.userName,
+        email: user.email,
+        role: user.role,
+      },
     });
   } catch (err) {
     return res.status(500).json({
-      message: "Login failed, server error",
+      message: "Error en el inicio de sesión",
       error: err.message,
     });
   }

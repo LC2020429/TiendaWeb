@@ -1,10 +1,11 @@
 "use strict";
-
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 import { dbConnection } from "./mongo.js";
+import apiLimiter from "../src/middlewares/rate-limit-validator.js";
+//import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
@@ -12,8 +13,57 @@ const middlewares = (app) => {
   app.use(cors());
   app.use(helmet());
   app.use(morgan("dev"));
+  app.use(apiLimiter);
 };
+/*
+const crearAdministrador = async () => {
+  try {
+    const adminExist = await User.findOne({ userName: "AdminOpinionGestor" });
 
+    if (!adminExist) {      
+      const encryptedPassword = await hash("Key40RAdm!nSuper");
+      const admin = new User({
+        apellidos: "Admin",
+        userName: "AdminOpinionGestor",
+        email: "AdminOpinionGestor@gmail.com",
+        password: encryptedPassword,
+        phone: 11110000,
+      });
+      await admin.save();
+    }
+  } catch (err) {
+    console.log(`Error al crear el administrador: ${err}`);
+  }
+};
+*/
+/*
+const crearCategoria = async () => {
+  try {
+    const categoriaExist = await Category.findOne({ categoryName: "Default" });
+
+    if (!categoriaExist) {
+      const defaultCategory = new Category({
+        categoryName: "Default",
+        vistasCategory: 0,
+        status: true,
+      });
+      await defaultCategory.save();
+    }
+  } catch (err) {
+    console.log(`Error al crear la categoría por defecto: ${err}`);
+  }
+};
+*/
+
+const routes = (app) => {
+  //app.use("/coperexInterFer/v1/auth", authRoutes);
+  //app.use("/coperexInterFer/v1/user", userRoutes);
+ // app.use("/coperexInterFer/v1/categoria", categoryRoutes);
+ // app.use("/coperexInterFer/v1/enterprise", enterpriseRoutes);
+ // app.use("/coperexInterFer/v1/reports", excelRoutes);
+
+  //app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+};
 const conectarDB = async () => {
   try {
     await dbConnection();
@@ -29,8 +79,12 @@ export const initServer = () => {
     middlewares(app);
     conectarDB();
     routes(app);
-    app.listen(process.env.PORT);
-    console.log(`Server running on port ${process.env.PORT}`);
+   // crearAdministrador();
+   // crearCategoria();
+    const port = process.env.PORT || 3002;
+    app.listen(port, () => {
+      console.log(`Server running on port ${port} `);
+    });
   } catch (err) {
     console.log(`Server init failed: ${err}`);
   }

@@ -25,7 +25,7 @@ const createMulterConfig = (destinationFolder) => {
       else
         cb(
           new Error(
-            `Solamente se aceptan archivos de los siguients tipos: ${MIMETYPES.join(
+            `Solamente se aceptan archivos de los siguientes tipos: ${MIMETYPES.join(
               " "
             )}`
           )
@@ -38,5 +38,5 @@ const createMulterConfig = (destinationFolder) => {
 };
 
 export const uploadProfilePicture = createMulterConfig(
-  "../../public/uploads/profile-picctures"
+  "../../public/uploads/profile-pictures"
 );
