@@ -1,4 +1,4 @@
-import CategoryProduct from "./category.model.js";
+import CategoryProduct from "./catePro.model.js";
 
 export const saveCategory = async (req, res) => {
   try {
@@ -15,7 +15,7 @@ export const saveCategory = async (req, res) => {
     if (existingCategory) {
       return res.status(400).json({
         success: false,
-        message: `La categoría "${nombreCategoria}" ya existe.`,
+        message: `La categoría ${nombreCategoria} ya existe.`,
       });
     }
 
@@ -87,37 +87,6 @@ export const listCategories = async (req, res) => {
   }
 };
 
-export const deleteCategory = async (req, res) => {
-  try {
-    const { cpid } = req.params;
-
-    const category = await CategoryProduct.findByIdAndUpdate(
-      cpid,
-      { status: false },
-      { new: true }
-    );
-
-    if (!category) {
-      return res.status(404).json({
-        success: false,
-        message: "Categoría no encontrada",
-      });
-    }
-
-    return res.status(200).json({
-      success: true,
-      message: "Categoría eliminada",
-      category,
-    });
-  } catch (err) {
-    return res.status(500).json({
-      success: false,
-      message: "Error al eliminar la categoría",
-      error: err.message,
-    });
-  }
-};
-
 export const updateCategory = async (req, res) => {
   try {
     const { cpid } = req.params;
@@ -143,6 +112,38 @@ export const updateCategory = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Error al actualizar la categoría",
+      error: err.message,
+    });
+  }
+};
+
+export const deleteCategory = async (req, res) => {
+  try {
+    const { cpid } = req.params;
+
+    const category = await CategoryProduct.findById(cpid);
+    if (!category) {
+      return res.status(404).json({
+        success: false,
+        message: "Categoría no encontrada",
+      });
+    }
+
+    // Cambiar solo el estado y la descripción sin modificar el nombre
+    category.descripcionCategoria = "Categoría eliminada";
+    category.status = false;
+
+    await category.save();
+
+    return res.status(200).json({
+      success: true,
+      message: "Categoría eliminada correctamente",
+      category,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: "Error al eliminar la categoría",
       error: err.message,
     });
   }

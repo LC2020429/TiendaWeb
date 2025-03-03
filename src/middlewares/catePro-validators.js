@@ -60,3 +60,7 @@ export const deleteCategoryValidator = [
   validarCampos,
   handleErrors,
 ];
+
+export const validateList =[
+  validateJWT,
+];

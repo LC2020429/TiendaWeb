@@ -12,18 +12,19 @@ import {
   getByIdCategoryValidator,
   updateCategoryValidator,
   deleteCategoryValidator,
+  validateList,
 } from "../middlewares/catePro-validators.js";
 
 const router = Router();
 
 router.post("/agregarCategoria", createCategoryValidator, saveCategory);
 
-router.get("/buscarCategoria/:cid", getByIdCategoryValidator, findCategory);
+router.get("/buscarCategoria/:cpid", getByIdCategoryValidator, findCategory);
 
-router.get("/", listCategories);
+router.get("/", validateList, listCategories);
 
-router.patch("/actualizarCategoria/:cid", updateCategoryValidator, updateCategory);
+router.patch("/actualizarCategoria/:cpid", updateCategoryValidator, updateCategory);
 
-router.delete("/eliminarCategoria/:cid", deleteCategoryValidator, deleteCategory);
+router.delete("/eliminarCategoria/:cpid", deleteCategoryValidator, deleteCategory);
 
 export default router;

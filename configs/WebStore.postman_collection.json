@@ -1,0 +1,935 @@
+{
+	"info": {
+		"_postman_id": "4ff02085-88ba-4a2f-980a-1edb93b0372d",
+		"name": "WebStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41770366"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "addAdmin1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apellidos",
+									"value": "Cordova Ruiz",
+									"type": "text"
+								},
+								{
+									"key": "nombres",
+									"value": "Luis Rafael",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "LC2020429",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "lcordova-2020429@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Compu/Downloads/WhatsApp Image 2025-03-02 at 3.05.58 AM (1).jpeg"
+								},
+								{
+									"key": "password",
+									"value": "1234Abc!",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addAdmin2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apellidos",
+									"value": "Herrera Perez",
+									"type": "text"
+								},
+								{
+									"key": "nombres",
+									"value": "Javier Eduardo",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Zodiacal",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jherrera-2020439@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Compu/Downloads/WhatsApp Image 2025-03-02 at 3.05.58 AM (1).jpeg"
+								},
+								{
+									"key": "password",
+									"value": "1234Abc!",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apellidos",
+									"value": "Ruiz",
+									"type": "text"
+								},
+								{
+									"key": "nombres",
+									"value": "Monica Susana",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Monik-a",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "Monik@kinal.edu.gt",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Compu/Downloads/WhatsApp Image 2025-03-02 at 3.05.59 AM.jpeg"
+								},
+								{
+									"key": "password",
+									"value": "1234Abc!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apellidos",
+									"value": "Cristel",
+									"type": "text"
+								},
+								{
+									"key": "nombres",
+									"value": "Alesandra",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "ale",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ale@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Compu/Downloads/caricatura.PNG"
+								},
+								{
+									"key": "password",
+									"value": "1234Abc!",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"ale\",\r\n    \"password\": \"1234Abc!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lcordova-2020429@kinal.edu.gt\",\r\n    \"password\": \"1234Abc!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1ZTVhYzU5ZDlhMDgxYjhiYzUxMjQiLCJpYXQiOjE3NDEwMjI4NTIsImV4cCI6MTc0MTAyNjQ1Mn0.yZDR8IcRF3uUJn6eyE9YUBd951hBnKrp10uwzVA8qPI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/user/findUsers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"user",
+								"findUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1ZTVhYzU5ZDlhMDgxYjhiYzUxMjQiLCJpYXQiOjE3NDEwMjI2ODQsImV4cCI6MTc0MTAyNjI4NH0.UYw5bXlHGiNt2qaHgt_mxfBLWBNCsKWG05YvIRDUND4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/user/findUser/67c5e5c159d9a081b8bc512c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"user",
+								"findUser",
+								"67c5e5c159d9a081b8bc512c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1ZTVjNTU5ZDlhMDgxYjhiYzUxMzAiLCJpYXQiOjE3NDEwMjI3NzcsImV4cCI6MTc0MTAyNjM3N30.2nUmil6mTj_CPPFiS74hPFItD2qhijKRQ3akmhsBxO8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/user/deleteUser/67c5e5c559d9a081b8bc5130",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"user",
+								"deleteUser",
+								"67c5e5c559d9a081b8bc5130"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1ZTVjNTU5ZDlhMDgxYjhiYzUxMzAiLCJpYXQiOjE3NDEwMjI3NzcsImV4cCI6MTc0MTAyNjM3N30.2nUmil6mTj_CPPFiS74hPFItD2qhijKRQ3akmhsBxO8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apellidos\": \"Cristela\",\r\n    \"nombres\": \"Alesandra C\",\r\n    \"userName\": \"ale1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/user/updateUser/67c5e5c559d9a081b8bc5130",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"user",
+								"updateUser",
+								"67c5e5c559d9a081b8bc5130"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1ZTVhYzU5ZDlhMDgxYjhiYzUxMjQiLCJpYXQiOjE3NDEwMjY0OTQsImV4cCI6MTc0MTAzMDA5NH0.8pYQsasRKG36DhWb84zHhI2SnYmXOjRA5xNyuASp9YE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPasswordVerify\": \"1234Abc!\",\r\n    \"newPassword\": \"Qw3rt01!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/user/updatePassword/67c5e5ac59d9a081b8bc5124",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"user",
+								"updatePassword",
+								"67c5e5ac59d9a081b8bc5124"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MDAwYTZhNGZkOGIxNjAxMjc4ZDkiLCJpYXQiOjE3NDEwMzI0MDEsImV4cCI6MTc0MTAzNjAwMX0.boUmjFzypDESBVPqhQBGunYlrQIYGSIMyI7cp-q_BJs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Compu/Downloads/Blue Colorful Illustrative Mind Map Brainstorm.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/user/updateProfilePicture/67c6000a6a4fd8b1601278d9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"user",
+								"updateProfilePicture",
+								"67c6000a6a4fd8b1601278d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRol",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MDAwYTZhNGZkOGIxNjAxMjc4ZDkiLCJpYXQiOjE3NDEwMzA3NjYsImV4cCI6MTc0MTAzNDM2Nn0.A91kqng1hrTb_Mui5gGQSlJu_Rf8txqq8WsC4A34fVY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newRole\": \"ADMIN\",\r\n    \"secretKey\": \"Th!$15MyS3cr37k3&101011\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/user/updateRole/67c6000a6a4fd8b1601278d9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"user",
+								"updateRole",
+								"67c6000a6a4fd8b1601278d9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categoriaP",
+			"item": [
+				{
+					"name": "addCate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDI3MTksImV4cCI6MTc0MTA0NjMxOX0.7A5NAoSNiPoaFx_DceugZXzX0-zRjN5juzpAQu1Lwic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCategoria\": \"Deportes\",\r\n    \"descripcionCategoria\":\"Articulos deportivos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/agregarCategoria",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"categoriaPro",
+								"agregarCategoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCate2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDI3MTksImV4cCI6MTc0MTA0NjMxOX0.7A5NAoSNiPoaFx_DceugZXzX0-zRjN5juzpAQu1Lwic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCategoria\": \"Limpieza\",\r\n    \"descripcionCategoria\":\"Articulos de limpieza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/agregarCategoria",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"categoriaPro",
+								"agregarCategoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCate3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDI3MTksImV4cCI6MTc0MTA0NjMxOX0.7A5NAoSNiPoaFx_DceugZXzX0-zRjN5juzpAQu1Lwic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCategoria\": \"Entretenimientos\",\r\n    \"descripcionCategoria\":\"Juegos de mesa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/agregarCategoria",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"categoriaPro",
+								"agregarCategoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listCat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzQxNjcyMzI4MTI4NGE3NjIxNWYiLCJpYXQiOjE3NDEwNDMyNDIsImV4cCI6MTc0MTA0Njg0Mn0.4wvk1l994VwsqJ147fHkj8ULW2X1tGX2fAQXAVr6sh0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"categoriaPro",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDI3MTksImV4cCI6MTc0MTA0NjMxOX0.7A5NAoSNiPoaFx_DceugZXzX0-zRjN5juzpAQu1Lwic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/buscarCategoria/67c635df0e9cf50137186754",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"categoriaPro",
+								"buscarCategoria",
+								"67c635df0e9cf50137186754"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDMyNzcsImV4cCI6MTc0MTA0Njg3N30.JccCF7olxaT7wrsgw_CAcaptKikj0uHjrrdpuF0y5xY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCategoria\": \"Jueguetes\",\r\n    \"descripcionCategoria\":\"Juegos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/actualizarCategoria/67c635df0e9cf50137186754",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"categoriaPro",
+								"actualizarCategoria",
+								"67c635df0e9cf50137186754"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCat",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDMyNzcsImV4cCI6MTc0MTA0Njg3N30.JccCF7olxaT7wrsgw_CAcaptKikj0uHjrrdpuF0y5xY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/eliminarCategoria/67c635d60e9cf50137186750",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"categoriaPro",
+								"eliminarCategoria",
+								"67c635d60e9cf50137186750"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": []
+		},
+		{
+			"name": "IngresoBodega",
+			"item": []
+		},
+		{
+			"name": "tienda",
+			"item": []
+		},
+		{
+			"name": "Carrito",
+			"item": []
+		}
+	]
+}
