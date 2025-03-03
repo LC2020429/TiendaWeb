@@ -10,7 +10,7 @@ const router = Router();
 
 router.post(
   "/register",
-  uploadProfilePicture.single("profilePicture"), 
+  uploadProfilePicture.single("profilePicture"),
   registerValidator,
   register
 );

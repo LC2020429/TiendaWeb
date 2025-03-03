@@ -3,6 +3,9 @@ import User from "./user.model.js";
 import fs from "fs/promises";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -79,10 +82,45 @@ export const deleteUser = async (req, res) => {
   }
 };
 
+export const updateUser = async (req, res) => {
+  try {
+    const { uid } = req.params;
+    const { role, status, profilePicture, password, email, ...data } = req.body;
+
+    if (Object.keys(data).length === 0) {
+      return res.status(400).json({
+        success: false,
+        msg: "No se proporcionaron campos para actualizar",
+      });
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(uid, data, { new: true });
+
+    if (!updatedUser) {
+      return res.status(404).json({
+        success: false,
+        msg: "Usuario no encontrado",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      msg: "Usuario actualizado",
+      user: updatedUser,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      msg: "Error al actualizar usuario",
+      error: err.message,
+    });
+  }
+};
+
 export const updatePassword = async (req, res) => {
   try {
     const { uid } = req.params;
-    const { newPasswordVerify, newPassword } = req.body;
+    const { oldPasswordVerify, newPassword } = req.body;
 
     const user = await User.findById(uid);
     if (!user) {
@@ -91,7 +129,7 @@ export const updatePassword = async (req, res) => {
         .json({ success: false, message: "Usuario no encontrado" });
     }
 
-    const verifyPassword = await verify(user.password, newPasswordVerify);
+    const verifyPassword = await verify(user.password, oldPasswordVerify);
     if (!verifyPassword) {
       return res.status(400).json({
         success: false,
@@ -122,27 +160,6 @@ export const updatePassword = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: "Error al actualizar contraseña",
-      error: err.message,
-    });
-  }
-};
-
-export const updateUser = async (req, res) => {
-  try {
-    const { uid } = req.params;
-    const data = req.body;
-
-    const updatedUser = await User.findByIdAndUpdate(uid, data, { new: true });
-
-    res.status(200).json({
-      success: true,
-      msg: "Usuario actualizado",
-      user: updatedUser,
-    });
-  } catch (err) {
-    res.status(500).json({
-      success: false,
-      msg: "Error al actualizar usuario",
       error: err.message,
     });
   }
@@ -188,6 +205,62 @@ export const updateProfilePicture = async (req, res) => {
     res.status(500).json({
       success: false,
       msg: "Error al actualizar la foto de perfil",
+      error: err.message,
+    });
+  }
+};
+
+export const updateUserRole = async (req, res) => {
+  try {
+    const { uid } = req.params;
+    const { newRole, secretKey } = req.body;
+
+    // Verificar que el rol proporcionado sea válido
+    if (!["USER", "ADMIN"].includes(newRole)) {
+      return res.status(400).json({
+        success: false,
+        message: "Rol no válido. Debe ser 'USER' o 'ADMIN'.",
+      });
+    }
+
+    // Verificar la clave secreta
+    if (secretKey !== process.env.SECRETORPRIVATEKEY) {
+      return res.status(403).json({
+        success: false,
+        message: "Clave secreta incorrecta. No autorizado.",
+      });
+    }
+
+    // Buscar usuario por ID
+    const user = await User.findById(uid);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "Usuario no encontrado.",
+      });
+    }
+
+    // Si el usuario ya tiene el mismo rol, evitar actualizar
+    if (user.role === newRole) {
+      return res.status(400).json({
+        success: false,
+        message: `El usuario ya tiene el rol '${newRole}'.`,
+      });
+    }
+
+    // Actualizar el rol del usuario
+    user.role = newRole;
+    await user.save();
+
+    return res.status(200).json({
+      success: true,
+      message: `Rol actualizado correctamente a '${newRole}'.`,
+      user,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: "Error al actualizar el rol del usuario.",
       error: err.message,
     });
   }

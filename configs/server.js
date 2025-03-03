@@ -5,6 +5,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { dbConnection } from "./mongo.js";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
+import authRoutes from "../src/auth/auth.routes.js";
+import userRoutes from "../src/user/user.routes.js"
 //import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 const middlewares = (app) => {
@@ -56,8 +58,8 @@ const crearCategoria = async () => {
 */
 
 const routes = (app) => {
-  //app.use("/coperexInterFer/v1/auth", authRoutes);
-  //app.use("/coperexInterFer/v1/user", userRoutes);
+  app.use("/tiendaWeb/v1/auth", authRoutes);
+  app.use("/tiendaWeb/v1/user", userRoutes);
  // app.use("/coperexInterFer/v1/categoria", categoryRoutes);
  // app.use("/coperexInterFer/v1/enterprise", enterpriseRoutes);
  // app.use("/coperexInterFer/v1/reports", excelRoutes);

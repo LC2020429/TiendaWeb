@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../user/user.model.js";
 
-export const validateJWT = async (req, res, next) => {
+export const validateOwn = async (req, res, next) => {
   try {
     let token =
       req.body.token || req.query.token || req.headers["authorization"];
@@ -19,10 +19,11 @@ export const validateJWT = async (req, res, next) => {
 
     const user = await User.findById(uid);
 
-    if (!user) {
-      return res.status(400).json({
+    // Valida que el sea el dueño del token
+    if (req.params.uid && req.params.uid !== uid) {
+      return res.status(403).json({
         success: false,
-        message: "usaurio no existe en la DB",
+        message: "No tienes permiso para realizar esta acción porque no eres el dueño",
       });
     }
 

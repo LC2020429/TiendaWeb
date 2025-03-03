@@ -8,7 +8,9 @@ import { validarCampos } from "./validate-fields.js";
 import { deleteFileOnError } from "./delete-file-on-error.js";
 import { validateJWTstatus } from "./validate-status.js";
 import { validateJWT } from "./validate-jwt.js";
+import { validateOwn} from "./validate-own.js"
 import { handleErrors } from "./handle-errors.js";
+import {hasRoles} from "./validate-admin.js"
 
 export const registerValidator = [
   body("apellidos")
@@ -33,7 +35,7 @@ export const registerValidator = [
     .custom(emailExists),
   body("password")
     .notEmpty()
-    .withMessage("La contraseña es obligatoria")
+    .withMessage("La contrasena es obligatoria")
     .isLength({ min: 8 })
     .withMessage("La contraseña debe tener al menos 8 caracteres"),
   body("role")
@@ -55,8 +57,15 @@ export const loginValidator = [
   validarCampos,
   handleErrors,
 ];
+// admin
+export const listUsersValidators = [
+  validateJWT,
+  hasRoles("ADMIN")
+]
 
 export const getUserByIdValidator = [
+  validateJWT,
+  hasRoles("ADMIN"),
   param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("uid").custom(userExists),
   validarCampos,
@@ -65,15 +74,21 @@ export const getUserByIdValidator = [
 
 export const deleteUserValidator = [
   validateJWT,
+  validateOwn,
   validateJWTstatus,
   param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("uid").custom(userExists),
   validarCampos,
   handleErrors,
 ];
+export const updateUserRoleValidator =[
+  validateJWT,
+  validateOwn,
+]
 
 export const updateUserValidator = [
   validateJWT,
+  validateOwn,
   param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("uid").custom(userExists),
   body("apellidos")
@@ -105,6 +120,7 @@ export const updateUserValidator = [
 export const updateProfilePictureValidator = [
   validateJWTstatus,
   validateJWT,
+  validateOwn,
   param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("uid").custom(userExists),
   validarCampos,
@@ -114,6 +130,7 @@ export const updateProfilePictureValidator = [
 
 export const updatePasswordValidator = [
   validateJWT,
+  validateOwn,
   validateJWTstatus,
   param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("uid").custom(userExists),

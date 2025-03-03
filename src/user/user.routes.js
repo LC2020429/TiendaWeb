@@ -6,6 +6,7 @@ import {
   updatePassword,
   updateUser,
   updateProfilePicture,
+  updateUserRole,
 } from "./user.controller.js";
 import {
   getUserByIdValidator,
@@ -13,6 +14,8 @@ import {
   updatePasswordValidator,
   updateUserValidator,
   updateProfilePictureValidator,
+  listUsersValidators,
+  updateUserRoleValidator, 
 } from "../middlewares/user-validators.js";
 import { uploadProfilePicture } from "../middlewares/multer-uploads-pp.js";
 
@@ -20,7 +23,7 @@ const router = Router();
 
 router.get("/findUser/:uid", getUserByIdValidator, getUserById);
 
-router.get("/findUsers", getUsers);
+router.get("/findUsers", listUsersValidators, getUsers);
 
 router.delete("/deleteUser/:uid", deleteUserValidator, deleteUser);
 
@@ -35,4 +38,5 @@ router.patch(
   updateProfilePicture
 );
 
+router.patch("/updateRole/:uid", updateUserRoleValidator, updateUserRole);
 export default router;
