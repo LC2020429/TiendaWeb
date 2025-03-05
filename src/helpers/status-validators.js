@@ -38,3 +38,44 @@ export const productNameExists = async (nombreProducto = "") => {
     throw new Error(`El producto '${nombreLowerCase}' ya existe.`);
   }
 };
+
+export const getCategoriaActiva = async (nombreCategoria) => {
+  let categoria = await CategoryProduct.findOne({
+    nombreCategoria: { $regex: new RegExp(`^${nombreCategoria}$`, "i") },
+    status: true,
+  });
+
+  // Si la categoría no está activa o no se encuentra, buscar la categoría predeterminada
+  if (!categoria || categoria.status === false) {
+    categoria = await CategoryProduct.findOne({
+      nombreCategoria: "Default",
+      status: true,
+    });
+  }
+
+  if (!categoria) {
+    throw new Error(
+      `Categoría '${nombreCategoria}' no encontrada o no disponible.`
+    );
+  }
+
+  return categoria;
+};
+
+// Función para reasignar productos a la categoría predeterminada
+export const reassignProductsToDefaultCategory = async (categoriaId) => {
+  const categoriaDefault = await CategoryProduct.findOne({
+    nombreCategoria: "Default",
+    status: true,
+  });
+
+  if (!categoriaDefault) {
+    throw new Error("Categoría predeterminada no encontrada.");
+  }
+
+  // Actualizamos todos los productos que están asignados a esta categoría eliminada
+  await Product.updateMany(
+    { categoriaProducto: categoriaId },
+    { categoriaProducto: categoriaDefault._id }
+  );
+};

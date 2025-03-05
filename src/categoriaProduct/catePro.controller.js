@@ -1,5 +1,5 @@
 import CategoryProduct from "./catePro.model.js";
-
+import {reassignProductsToDefaultCategory} from "../helpers/status-validators.js" ;
 export const saveCategory = async (req, res) => {
   try {
     const { nombreCategoria, descripcionCategoria } = req.body;
@@ -124,20 +124,26 @@ export const updateCategory = async (req, res) => {
 export const deleteCategory = async (req, res) => {
   try {
     const { cpid } = req.params;
+    console.log("ID recibido:", cpid); // Verifica el ID que se recibe
 
-    const category = await CategoryProduct.findById(cpid);
-    if (!category) {
+    const categoria = await CategoryProduct.findById(cpid); // Asegúrate de que cpid sea el ID correcto
+
+    if (!categoria) {
       return res.status(404).json({
         success: false,
         message: "Categoría no encontrada",
       });
     }
-    category.status = false;
-    await category.save();
+
+    categoria.status = false;
+    categoria.descripcion = "Categoría eliminada"; // O cualquier valor que desees asignar
+    await categoria.save();
+
+    await reassignProductsToDefaultCategory(cpid);
+
     return res.status(200).json({
       success: true,
-      message: "Categoría eliminada correctamente",
-      category,
+      message: "Categoría eliminada y productos reasignados correctamente",
     });
   } catch (err) {
     return res.status(500).json({
