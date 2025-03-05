@@ -8,6 +8,7 @@ import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
 import categoryProductRoutes from "../src/categoriaProduct/catePro.routes.js";
+import productRoutes from "../src/product/product.routes.js"
 import categoryPro from "../src/categoriaProduct/catePro.model.js";
 //import { swaggerDocs, swaggerUi } from "./swagger.js";
 
@@ -43,6 +44,7 @@ const routes = (app) => {
   app.use("/tiendaWeb/v1/auth", authRoutes);
   app.use("/tiendaWeb/v1/user", userRoutes);
   app.use("/tiendaWeb/v1/categoriaPro", categoryProductRoutes);
+  app.use("/tiendaWeb/v1/product", productRoutes);
   // app.use("/coperexInterFer/v1/enterprise", enterpriseRoutes);
   // app.use("/coperexInterFer/v1/reports", excelRoutes);
 

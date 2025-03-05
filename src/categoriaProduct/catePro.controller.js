@@ -92,9 +92,13 @@ export const updateCategory = async (req, res) => {
     const { cpid } = req.params;
     const data = req.body;
 
-    const updatedCategory = await CategoryProduct.findByIdAndUpdate(cpid, data, {
-      new: true,
-    });
+    const updatedCategory = await CategoryProduct.findByIdAndUpdate(
+      cpid,
+      data,
+      {
+        new: true,
+      }
+    );
 
     if (!updatedCategory) {
       return res.status(404).json({
@@ -128,13 +132,8 @@ export const deleteCategory = async (req, res) => {
         message: "Categoría no encontrada",
       });
     }
-
-    // Cambiar solo el estado y la descripción sin modificar el nombre
-    category.descripcionCategoria = "Categoría eliminada";
     category.status = false;
-
     await category.save();
-
     return res.status(200).json({
       success: true,
       message: "Categoría eliminada correctamente",

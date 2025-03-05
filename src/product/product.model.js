@@ -7,12 +7,6 @@ const schemaProduct = Schema(
       required: [true, "El nombre del producto es requerido"],
       maxLength: [25, "El nombre no puede ser mayor a 25 caracteres"],
     },
-    moneda: {
-      type: String,
-      required: true,
-      default: "Q",
-      enum: ["$", "Q"],
-    },
     precio: {
       type: Number,
       required: true,
@@ -21,29 +15,22 @@ const schemaProduct = Schema(
     productFoto: {
       type: String,
     },
-    tipoProduct: {
+    descripcionEspecificaP: {
       type: String,
-      required: [
-        true,
-        "Se debe de dar el estado del producto, New, Lujo, etc.",
-      ],
-      maxLength: [
-        20,
-        "El tipo de producto no pueden exceder los 20 caracteres",
-      ],
-    },
-    color: {
-      type: String,
-      maxLength: [16, "Los colores no pueden exceder los 16 caracteres"],
-    },
-    size: {
-      type: String,
-      maxLength: [20, "Los colores no pueden exceder los 20 caracteres"],
+      maxLength: [150, "La descripcion no puede exceder los 150 caracteres"],
     },
     categoriaProducto: {
       type: Schema.Types.ObjectId,
-      ref: "categoriaProduct",
+      ref: "CategoryProduct",
       required: [true, "El id de la categoría es obligatoria"],
+    },
+    ventas:{
+      type: Number,
+      default: 0,
+    },
+    status: {
+      type: Boolean,
+      default: true,
     },
   },
   {

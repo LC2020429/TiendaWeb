@@ -33,7 +33,7 @@ router.put("/updateUser/:uid", updateUserValidator, updateUser);
 
 router.patch(
   "/updateProfilePicture/:uid",
-  uploadProfilePicture.single("profilePicture"),
+  uploadProfilePicture,
   updateProfilePictureValidator,
   updateProfilePicture
 );
