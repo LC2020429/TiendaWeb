@@ -769,7 +769,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzQxNjcyMzI4MTI4NGE3NjIxNWYiLCJpYXQiOjE3NDEwNDMyNDIsImV4cCI6MTc0MTA0Njg0Mn0.4wvk1l994VwsqJ147fHkj8ULW2X1tGX2fAQXAVr6sh0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMDQxNDUsImV4cCI6MTc0MTIwNzc0NX0.sdFiDC-HSEsh8HUl-ZbACIouEcgpFWCOkA9rpDm4fOY",
 									"type": "string"
 								}
 							]
@@ -885,7 +885,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDMyNzcsImV4cCI6MTc0MTA0Njg3N30.JccCF7olxaT7wrsgw_CAcaptKikj0uHjrrdpuF0y5xY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMTM5ODQsImV4cCI6MTc0MTIxNzU4NH0.drpMuDtfO0ujUU4YBXHFB4uMFJAzgWELIAF0NMQMe_U",
 									"type": "string"
 								}
 							]
@@ -893,7 +893,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/eliminarCategoria/67c635d60e9cf50137186750",
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/categoriaPro/eliminarCategoria/67c635b20e9cf5013718674a",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -907,7 +907,7 @@
 								"v1",
 								"categoriaPro",
 								"eliminarCategoria",
-								"67c635d60e9cf50137186750"
+								"67c635b20e9cf5013718674a"
 							]
 						}
 					},
@@ -917,7 +917,369 @@
 		},
 		{
 			"name": "Product",
-			"item": []
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMDQ1MDQsImV4cCI6MTc0MTIwODEwNH0.iGcqey7j-B6zYcCSBL73VZwJ_qHR4RrfhDy9nIUKMuQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombreProducto",
+									"value": "Rauqueta PingPong",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "productFoto",
+									"type": "file",
+									"src": [
+										"/C:/Users/Compu/Downloads/WhatsApp Image 2025-03-04 at 8.59.37 PM (1).jpeg",
+										"/C:/Users/Compu/Downloads/WhatsApp Image 2025-03-04 at 8.59.37 PM.jpeg"
+									]
+								},
+								{
+									"key": "descripcionEspecificaP",
+									"value": "raqueta premium mappa",
+									"type": "text"
+								},
+								{
+									"key": "categoriaProducto",
+									"value": "67c635b20e9cf5013718674a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/product/agregarProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"product",
+								"agregarProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProduct Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMDQ1MDQsImV4cCI6MTc0MTIwODEwNH0.iGcqey7j-B6zYcCSBL73VZwJ_qHR4RrfhDy9nIUKMuQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombreProducto",
+									"value": "PingPong Mechanic",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "350",
+									"type": "text"
+								},
+								{
+									"key": "productFoto",
+									"type": "file",
+									"src": [
+										"/C:/Users/Compu/Downloads/WhatsApp Image 2025-03-04 at 8.59.37 PM (1).jpeg",
+										"/C:/Users/Compu/Downloads/WhatsApp Image 2025-03-04 at 8.59.37 PM.jpeg"
+									]
+								},
+								{
+									"key": "descripcionEspecificaP",
+									"value": "raqueta premium  mechanica mappa",
+									"type": "text"
+								},
+								{
+									"key": "categoriaProducto",
+									"value": "67c635b20e9cf5013718674a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/product/agregarProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"product",
+								"agregarProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMTIzNTYsImV4cCI6MTc0MTIxNTk1Nn0.9G_t7KlgP_dRLm6v4CmGntBwagrwG7CEvIBbQ54-Zo4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/product/buscarProduct/67c8b177d946d54aea7dfa4b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"product",
+								"buscarProduct",
+								"67c8b177d946d54aea7dfa4b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMTU1MzAsImV4cCI6MTc0MTIxOTEzMH0.SXG_EuZmvGFV9W7MUT1kD7zFrWYSbkB6uarUqfGmGhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listProductDelete",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMDkzMTMsImV4cCI6MTc0MTIxMjkxM30.bZVKwSiC6q90Yn0JMmja7o1Zi4OjnqfhMf_zTSKvLCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/product/listDelete",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"product",
+								"listDelete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listProductMostSelled",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMDkzMTMsImV4cCI6MTc0MTIxMjkxM30.bZVKwSiC6q90Yn0JMmja7o1Zi4OjnqfhMf_zTSKvLCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/product/listMostSelled",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"product",
+								"listMostSelled"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscarPorCategoria",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMDkzMTMsImV4cCI6MTc0MTIxMjkxM30.bZVKwSiC6q90Yn0JMmja7o1Zi4OjnqfhMf_zTSKvLCo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CategoryProduct\": \"Deportes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/product/productByNameCategoria/Deportes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"product",
+								"productByNameCategoria",
+								"Deportes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "IngresoBodega",
