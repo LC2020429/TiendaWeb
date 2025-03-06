@@ -61,8 +61,25 @@ export const getUsers = async (req, res) => {
 export const deleteUser = async (req, res) => {
   try {
     const { uid } = req.params;
+    const { oldPasswordVerify } = req.body; 
 
-    const user = await User.findByIdAndUpdate(
+    const user = await User.findById(uid);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "Usuario no encontrado",
+      });
+    }
+
+    const verifyPassword = await verify(user.password, oldPasswordVerify);
+    if (!verifyPassword) {
+      return res.status(400).json({
+        success: false,
+        message: "Contraseña antigua incorrecta",
+      });
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
       uid,
       { status: false },
       { new: true }
@@ -71,7 +88,7 @@ export const deleteUser = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: "Usuario eliminado",
-      user,
+      user: updatedUser,
     });
   } catch (err) {
     return res.status(500).json({

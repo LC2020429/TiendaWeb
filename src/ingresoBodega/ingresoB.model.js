@@ -2,25 +2,38 @@ import { Schema, model } from "mongoose";
 
 const ingresoBodega = Schema(
   {
-    encargadoBodega: {
+    encargadoIngreso: {
       type: String,
-      required: [true, "Debe de dar el nombre de"],
+      required: [true, "Debe de dar el nombre del encargado"],
+    },
+    product: {
+      type: Schema.Types.ObjectId,
+      ref: "Producto", // Referencia al producto
+      required: [true, "El id del Producto es obligatorio"],
     },
     cantProducto: {
       type: Number,
-      default: 0,
+      required: [true, "La cantidad del producto es obligatoria"],
+      default: 0, // Cantidad que entra a la bodega
     },
-    schemaProduct: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Producto",
-        required: [true, "El id del Producto es obligatoria"],
-      },
-    ],
+    fechaIngreso: {
+      type: Date,
+      default: Date.now,
+    },
+    status: {
+      type: String,
+      enum: ["ACTIVO", "DESCONTINUADO"],
+      default: "ACTIVO",
+    },
+    exisistencia: {
+      type: String,
+      enum: ["EXISTENCIAS", "AGOTADO"],
+      default: "EXISTENCIAS",
+    },
   },
   {
     versionKey: false,
-    timeStamps: true,
+    timestamps: true,
   }
 );
 
@@ -29,4 +42,5 @@ ingresoBodega.methods.toJson = function () {
   ingresoBo.bid = _id;
   return ingresoBo;
 };
-export default model("Stock", ingresoBodega);
+
+export default model("IngresoBodega", ingresoBodega);
