@@ -6,6 +6,7 @@ import {
   editarCarrito,
   cancelarCarrito,
 } from "./carrito.controller.js";
+import { validateOwn } from "../middlewares/validate-own.js";
 import { generarFactura } from "../middlewares/factura-upload.js";
 import {
   agregarCarritoValidator,
@@ -43,7 +44,7 @@ const router = express.Router();
  *         description: Invalid input
  */
 router.post(
-  "/agregarCarrito/:usuarioId",
+  "/agregarCarrito/:uid",
   agregarCarritoValidator,
   agregarCarrito
 );
@@ -68,7 +69,8 @@ router.post(
  *         description: User not found
  */
 router.get(
-  "/carritosUserActivos/:usuarioId",
+  "/carritosUserActivos/:uid",
+  validateOwn,
   listarCarritosValidator,
   listarCarritosActivosPorUsuario
 );
@@ -93,7 +95,8 @@ router.get(
  *         description: User not found
  */
 router.get(
-  "/listCarrtiosUser/:usuarioId",
+  "/listCarrtiosUser/:uid",
+  validateOwn,
   listarTodosCarritosValidator,
   listarTodosCarritosPorUsuario
 );
@@ -132,7 +135,8 @@ router.get(
  *         description: Cart not found
  */
 router.put(
-  "/updateCarrito/:usuarioId/:carritoId",
+  "/updateCarrito/:uid/:carritoId",
+  validateOwn,
   editarCarritoValidator,
   editarCarrito
 );
@@ -158,6 +162,7 @@ router.put(
  */
 router.delete(
   "/cancelarCarrito/:carritoId",
+  validateOwn,
   cancelarCarritoValidator,
   cancelarCarrito
 );

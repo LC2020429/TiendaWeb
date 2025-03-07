@@ -5,18 +5,18 @@ import Usuario from "../user/user.model.js";
 
 export const agregarCarrito = async (req, res) => {
   try {
-    const { usuarioId } = req.params; // usuarioId en la URL
+    const { uid } = req.params; // usuarioId en la URL
     const { productos } = req.body; // Productos enviados en el body
 
     // Asegúrate de que el usuario del token coincida con el usuario de la URL
-    if (req.usuario._id.toString() !== usuarioId) {
+    if (req.usuario._id.toString() !== uid) {
       return res.status(403).json({
         success: false,
         message: "No tienes permiso para agregar productos al carrito de otro usuario",
       });
     }
 
-    const usuario = await Usuario.findById(usuarioId);
+    const usuario = await Usuario.findById(uid);
     if (!usuario) {
       return res.status(404).json({
         success: false,
@@ -52,7 +52,7 @@ export const agregarCarrito = async (req, res) => {
 
     // Crear un nuevo carrito
     const nuevoCarrito = new Carrito({
-      usuario: usuarioId,
+      usuario: uid,
       productos: [],
       total: 0,
       estado: "ACTIVO",
@@ -104,9 +104,9 @@ export const agregarCarrito = async (req, res) => {
 
 export const listarCarritosActivosPorUsuario = async (req, res) => {
   try {
-    const { usuarioId } = req.params;
+    const { uid } = req.params;
     const carritos = await Carrito.find({
-      usuario: usuarioId,
+      usuario: uid,
       estado: "ACTIVO",
     });
 
@@ -132,8 +132,8 @@ export const listarCarritosActivosPorUsuario = async (req, res) => {
 
 export const listarTodosCarritosPorUsuario = async (req, res) => {
   try {
-    const { usuarioId } = req.params;
-    const carritos = await Carrito.find({ usuario: usuarioId });
+    const { uid } = req.params;
+    const carritos = await Carrito.find({ usuario: uid });
 
     if (!carritos || carritos.length === 0) {
       return res.status(404).json({
@@ -157,7 +157,7 @@ export const listarTodosCarritosPorUsuario = async (req, res) => {
 
 export const editarCarrito = async (req, res) => {
   try {
-    const { usuarioId, carritoId } = req.params;
+    const { uid, carritoId } = req.params;
     const { productoId, cantidad } = req.body;
 
     if (cantidad === 0) {
@@ -188,7 +188,7 @@ export const editarCarrito = async (req, res) => {
 
     const carrito = await Carrito.findOne({
       _id: carritoId,
-      usuario: usuarioId,
+      usuario: uid,
       estado: "ACTIVO",
     });
     if (!carrito) {
