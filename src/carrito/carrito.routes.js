@@ -4,8 +4,9 @@ import {
   listarCarritosActivosPorUsuario,
   listarTodosCarritosPorUsuario,
   editarCarrito,
-  cancelarCarrito, 
+  cancelarCarrito,
 } from "./carrito.controller.js";
+import {generarFactura} from "../src/factura/factura.controller.js";
 import {
   agregarCarritoValidator,
   editarCarritoValidator,
@@ -42,5 +43,7 @@ router.put(
   cancelarCarritoValidator,
   cancelarCarrito
 );
+
+router.get("/factura/:carritoId/:nit?", generarFactura);
 
 export default router;
