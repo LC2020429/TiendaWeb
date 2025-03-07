@@ -6,7 +6,7 @@ import {
   editarCarrito,
   cancelarCarrito,
 } from "./carrito.controller.js";
-import {generarFactura} from "../src/factura/factura.controller.js";
+import { generarFactura } from "../middlewares/factura-upload.js";
 import {
   agregarCarritoValidator,
   editarCarritoValidator,
@@ -17,33 +17,170 @@ import {
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * /agregarCarrito/{usuarioId}:
+ *   post:
+ *     summary: Add a new cart for a user
+ *     tags: [Cart]
+ *     parameters:
+ *       - in: path
+ *         name: usuarioId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: User ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Cart'
+ *     responses:
+ *       200:
+ *         description: Cart added successfully
+ *       400:
+ *         description: Invalid input
+ */
 router.post(
   "/agregarCarrito/:usuarioId",
   agregarCarritoValidator,
   agregarCarrito
 );
+
+/**
+ * @swagger
+ * /carritosUserActivos/{usuarioId}:
+ *   get:
+ *     summary: List active carts for a user
+ *     tags: [Cart]
+ *     parameters:
+ *       - in: path
+ *         name: usuarioId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: User ID
+ *     responses:
+ *       200:
+ *         description: List of active carts
+ *       404:
+ *         description: User not found
+ */
 router.get(
   "/carritosUserActivos/:usuarioId",
   listarCarritosValidator,
   listarCarritosActivosPorUsuario
 );
+
+/**
+ * @swagger
+ * /listCarrtiosUser/{usuarioId}:
+ *   get:
+ *     summary: List all carts for a user
+ *     tags: [Cart]
+ *     parameters:
+ *       - in: path
+ *         name: usuarioId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: User ID
+ *     responses:
+ *       200:
+ *         description: List of all carts
+ *       404:
+ *         description: User not found
+ */
 router.get(
   "/listCarrtiosUser/:usuarioId",
   listarTodosCarritosValidator,
   listarTodosCarritosPorUsuario
 );
+
+/**
+ * @swagger
+ * /updateCarrito/{usuarioId}/{carritoId}:
+ *   put:
+ *     summary: Update a cart by ID
+ *     tags: [Cart]
+ *     parameters:
+ *       - in: path
+ *         name: usuarioId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: User ID
+ *       - in: path
+ *         name: carritoId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Cart ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Cart'
+ *     responses:
+ *       200:
+ *         description: Cart updated successfully
+ *       400:
+ *         description: Invalid input
+ *       404:
+ *         description: Cart not found
+ */
 router.put(
   "/updateCarrito/:usuarioId/:carritoId",
   editarCarritoValidator,
   editarCarrito
 );
 
-router.put(
+/**
+ * @swagger
+ * /cancelarCarrito/{carritoId}:
+ *   delete:
+ *     summary: Cancel a cart by ID
+ *     tags: [Cart]
+ *     parameters:
+ *       - in: path
+ *         name: carritoId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Cart ID
+ *     responses:
+ *       200:
+ *         description: Cart cancelled successfully
+ *       404:
+ *         description: Cart not found
+ */
+router.delete(
   "/cancelarCarrito/:carritoId",
   cancelarCarritoValidator,
   cancelarCarrito
 );
 
-router.get("/factura/:carritoId/:nit?", generarFactura);
+/**
+ * @swagger
+ * /factura/{carritoId}:
+ *   post:
+ *     summary: Generate an invoice for a cart
+ *     tags: [Cart]
+ *     parameters:
+ *       - in: path
+ *         name: carritoId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Cart ID
+ *     responses:
+ *       200:
+ *         description: Invoice generated successfully
+ *       404:
+ *         description: Cart not found
+ */
+router.post("/factura/:carritoId", generarFactura); 
 
 export default router;

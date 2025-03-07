@@ -18,8 +18,8 @@
     }
   ],
   "total": 700,
-  "estado": "ACTIVO",
-  "status": true,
+  "estado": "CANCEL",
+  "status": false,
   "fechaCreacion": {
     "$date": "2025-03-07T00:11:42.223Z"
   },
@@ -27,7 +27,7 @@
     "$date": "2025-03-07T00:11:42.246Z"
   },
   "updatedAt": {
-    "$date": "2025-03-07T00:11:42.246Z"
+    "$date": "2025-03-07T15:03:47.428Z"
   }
 },
 {
@@ -60,5 +60,90 @@
   },
   "updatedAt": {
     "$date": "2025-03-07T00:17:48.194Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cb0738ea61a6611353369e"
+  },
+  "usuario": {
+    "$oid": "67c63416723281284a76215f"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "67c8b180d946d54aea7dfa51"
+      },
+      "cantidad": 2,
+      "precio": 350,
+      "_id": {
+        "$oid": "67cb0738ea61a6611353369f"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "67c8b177d946d54aea7dfa4b"
+      },
+      "cantidad": 3,
+      "precio": 250,
+      "_id": {
+        "$oid": "67cb0738ea61a661135336a0"
+      }
+    }
+  ],
+  "total": 1450,
+  "estado": "CANCEL",
+  "status": false,
+  "fechaCreacion": {
+    "$date": "2025-03-07T14:48:24.684Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-07T14:48:24.697Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T16:45:08.685Z"
+  },
+  "facturado": true
+},
+{
+  "_id": {
+    "$oid": "67cb0776ea61a661135336a9"
+  },
+  "usuario": {
+    "$oid": "67c6340f723281284a762157"
+  },
+  "productos": [
+    {
+      "producto": {
+        "$oid": "67c8b180d946d54aea7dfa51"
+      },
+      "cantidad": 2,
+      "precio": 350,
+      "_id": {
+        "$oid": "67cb0776ea61a661135336aa"
+      }
+    },
+    {
+      "producto": {
+        "$oid": "67c8b177d946d54aea7dfa4b"
+      },
+      "cantidad": 3,
+      "precio": 250,
+      "_id": {
+        "$oid": "67cb0776ea61a661135336ab"
+      }
+    }
+  ],
+  "total": 1450,
+  "estado": "CANCEL",
+  "status": false,
+  "fechaCreacion": {
+    "$date": "2025-03-07T14:49:26.765Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-07T14:49:26.766Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T15:03:16.351Z"
   }
 }]

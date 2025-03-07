@@ -12,7 +12,7 @@ import productRoutes from "../src/product/product.routes.js"
 import categoryPro from "../src/categoriaProduct/catePro.model.js";
 import bodegaRoutes from "../src/ingresoBodega/ingresoB.routes.js";
 import carritoRoutes from "../src/carrito/carrito.routes.js";
-//import { swaggerDocs, swaggerUi } from "./swagger.js";
+import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
@@ -49,8 +49,7 @@ const routes = (app) => {
   app.use("/tiendaWeb/v1/product", productRoutes);
   app.use("/tiendaWeb/v1/tienda", bodegaRoutes);
   app.use("/tiendaWeb/v1/carrito", carritoRoutes);
-
-  //app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 };
 const conectarDB = async () => {
   try {

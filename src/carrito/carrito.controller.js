@@ -5,12 +5,17 @@ import Usuario from "../user/user.model.js";
 
 export const agregarCarrito = async (req, res) => {
   try {
-    const { usuarioId } = req.params;
-    const { productos } = req.body;
+    const { usuarioId } = req.params; // usuarioId en la URL
+    const { productos } = req.body; // Productos enviados en el body
 
-    console.log("Productos recibidos:", productos);
+    // Asegúrate de que el usuario del token coincida con el usuario de la URL
+    if (req.usuario._id.toString() !== usuarioId) {
+      return res.status(403).json({
+        success: false,
+        message: "No tienes permiso para agregar productos al carrito de otro usuario",
+      });
+    }
 
-    // Verificar si el usuario existe
     const usuario = await Usuario.findById(usuarioId);
     if (!usuario) {
       return res.status(404).json({
@@ -19,7 +24,6 @@ export const agregarCarrito = async (req, res) => {
       });
     }
 
-    // **Agrupar productos para evitar duplicados** en la validación
     const productosMap = new Map();
     productos.forEach(({ productoId, cantidad }) => {
       if (productosMap.has(productoId)) {
@@ -46,9 +50,6 @@ export const agregarCarrito = async (req, res) => {
       status: "ACTIVO",
     });
 
-    console.log("Productos en BD:", productosDB);
-    console.log("Stock en bodega:", bodegaStock);
-
     // Crear un nuevo carrito
     const nuevoCarrito = new Carrito({
       usuario: usuarioId,
@@ -72,7 +73,7 @@ export const agregarCarrito = async (req, res) => {
       if (!stock || stock.cantProducto < cantidad) {
         return res.status(400).json({
           success: false,
-          message: `No hay suficiente stock en la bodega para el producto ${producto.nombre}`,
+          message: `No hay suficiente stock en la bodega para el producto`,
         });
       }
 
@@ -237,7 +238,7 @@ export const cancelarCarrito = async (req, res) => {
     if (!carrito) {
       return res.status(404).json({ msg: "Carrito no encontrado" });
     }
-    carrito.estado = "CANCEL";
+    carrito.estado = "DELETED";
     carrito.status = false;
     await carrito.save();
 
@@ -248,3 +249,4 @@ export const cancelarCarrito = async (req, res) => {
       .json({ msg: "Error al cancelar el carrito", error: error.message });
   }
 };
+
