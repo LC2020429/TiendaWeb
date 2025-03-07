@@ -1,6 +1,6 @@
 [{
   "_id": {
-    "$oid": "67c6359a9cca4a44faa3a8c2"
+    "$oid": "67caf7c8d55b670ca6722e9d"
   },
   "nombreCategoria": "Default",
   "descripcionCategoria": "Productos varios",
@@ -28,5 +28,13 @@
   },
   "nombreCategoria": "Jueguetes",
   "descripcionCategoria": "Juegos",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67cb1906351a124fcc2e4d01"
+  },
+  "nombreCategoria": "Entretenimientos",
+  "descripcionCategoria": "Juegos de mesa",
   "status": true
 }]

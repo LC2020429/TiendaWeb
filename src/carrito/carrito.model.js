@@ -25,7 +25,6 @@ const carritoSchema = Schema(
         },
       },
     ],
-    // se calcula con una funcions
     total: {
       type: Number,
       required: true,
@@ -33,7 +32,7 @@ const carritoSchema = Schema(
     },
     estado: {
       type: String,
-      enum: ["ACTIVO", "CANCEL"],
+      enum: ["ACTIVO", "CANCEL", "DELETED"],
       default: "ACTIVO",
     },
     status: {
@@ -43,6 +42,10 @@ const carritoSchema = Schema(
     fechaCreacion: {
       type: Date,
       default: Date.now,
+    },
+    facturado: {
+      type: Boolean,
+      default: false,
     },
   },
   {
@@ -62,7 +65,7 @@ carritoSchema.methods.calcularTotal = function () {
 
 carritoSchema.methods.toJson = function () {
   const { _id, ...carrito } = this.toObject();
-  carrito.caid = _id; 
+  carrito.caid = _id;
   return carrito;
 };
 

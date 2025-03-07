@@ -1,5 +1,6 @@
 import CategoryProduct from "./catePro.model.js";
 import {reassignProductsToDefaultCategory} from "../helpers/status-validators.js" ;
+// pasar los if a un validator
 export const saveCategory = async (req, res) => {
   try {
     const { nombreCategoria, descripcionCategoria } = req.body;

@@ -6,7 +6,7 @@
   "precio": 250,
   "descripcionEspecificaP": "raqueta premium mappa",
   "categoriaProducto": {
-    "$oid": "67c6359a9cca4a44faa3a8c2"
+    "$oid": "67c635b20e9cf5013718674a"
   },
   "ventas": 0,
   "status": true
@@ -19,7 +19,7 @@
   "precio": 350,
   "descripcionEspecificaP": "raqueta premium  mechanica mappa",
   "categoriaProducto": {
-    "$oid": "67c6359a9cca4a44faa3a8c2"
+    "$oid": "67c635b20e9cf5013718674a"
   },
   "ventas": 150,
   "status": true

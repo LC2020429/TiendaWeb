@@ -7,7 +7,7 @@
     "$oid": "67c8b180d946d54aea7dfa51"
   },
   "cantProducto": 50,
-  "status": "ACTIVO",
+  "status": "DESCONTINUADO",
   "exisistencia": "EXISTENCIAS",
   "fechaIngreso": {
     "$date": "2025-03-06T19:43:15.716Z"
@@ -16,7 +16,7 @@
     "$date": "2025-03-06T19:43:15.719Z"
   },
   "updatedAt": {
-    "$date": "2025-03-06T21:16:03.903Z"
+    "$date": "2025-03-07T14:20:42.564Z"
   }
 },
 {
@@ -42,22 +42,22 @@
 },
 {
   "_id": {
-    "$oid": "67ca002efe5ef1b6f902fc95"
+    "$oid": "67caff66d55b670ca6722eb8"
   },
-  "encargadoIngreso": "Juan Gonzalo",
+  "encargadoIngreso": "JAVIER",
   "product": {
-    "$oid": "67c8b180d946d54aea7dfa51"
+    "$oid": "67c8b177d946d54aea7dfa4b"
   },
   "cantProducto": 50,
   "status": "ACTIVO",
   "exisistencia": "EXISTENCIAS",
   "fechaIngreso": {
-    "$date": "2025-03-06T20:06:06.490Z"
+    "$date": "2025-03-07T14:15:02.861Z"
   },
   "createdAt": {
-    "$date": "2025-03-06T20:06:06.494Z"
+    "$date": "2025-03-07T14:15:02.863Z"
   },
   "updatedAt": {
-    "$date": "2025-03-06T20:06:06.494Z"
+    "$date": "2025-03-07T14:16:56.622Z"
   }
 }]

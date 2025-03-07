@@ -9,6 +9,7 @@ import { hasRoles } from "./validate-admin.js";
 export const agregarCarritoValidator = [
   validateJWT,
   hasRoles("USER"),
+  validateOwn,
   body("productos")
     .isArray({ min: 1 })
     .withMessage("Debe incluir al menos un producto en el carrito"),

@@ -1,6 +1,6 @@
 import IngresoBodega from "./ingresoB.model.js";
 import Producto from "../product/product.model.js";
-
+// validadores a
 export const guardarIngresoBodega = async (req, res) => {
   try {
     console.log("Cuerpo recibido:", req.body);

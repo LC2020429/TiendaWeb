@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4ff02085-88ba-4a2f-980a-1edb93b0372d",
+		"_postman_id": "11f0631e-7d63-43f2-840e-eb3cb31c018b",
 		"name": "WebStore",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41770366"
+		"_exporter_id": "37643426"
 	},
 	"item": [
 		{
@@ -637,7 +637,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDI3MTksImV4cCI6MTc0MTA0NjMxOX0.7A5NAoSNiPoaFx_DceugZXzX0-zRjN5juzpAQu1Lwic",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNjM0MjcsImV4cCI6MTc0MTM2NzAyN30.vfGqLil1F8igHh0BfdL_Wdh2uYXldOmfceQNrEEdrM8",
 									"type": "string"
 								}
 							]
@@ -681,7 +681,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDI3MTksImV4cCI6MTc0MTA0NjMxOX0.7A5NAoSNiPoaFx_DceugZXzX0-zRjN5juzpAQu1Lwic",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNjM0MjcsImV4cCI6MTc0MTM2NzAyN30.vfGqLil1F8igHh0BfdL_Wdh2uYXldOmfceQNrEEdrM8",
 									"type": "string"
 								}
 							]
@@ -725,7 +725,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEwNDI3MTksImV4cCI6MTc0MTA0NjMxOX0.7A5NAoSNiPoaFx_DceugZXzX0-zRjN5juzpAQu1Lwic",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNjM0MjcsImV4cCI6MTc0MTM2NzAyN30.vfGqLil1F8igHh0BfdL_Wdh2uYXldOmfceQNrEEdrM8",
 									"type": "string"
 								}
 							]
@@ -961,7 +961,7 @@
 								},
 								{
 									"key": "categoriaProducto",
-									"value": "67c635b20e9cf5013718674a",
+									"value": "67caf7c8d55b670ca6722e9d",
 									"type": "text"
 								}
 							]
@@ -1195,7 +1195,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEyMDkzMTMsImV4cCI6MTc0MTIxMjkxM30.bZVKwSiC6q90Yn0JMmja7o1Zi4OjnqfhMf_zTSKvLCo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNjMyNjgsImV4cCI6MTc0MTM2Njg2OH0.G_GawRWwosO822zcQwZIoELCXm_iTzhCZz_uVsOYCYk",
 									"type": "string"
 								}
 							]
@@ -1283,15 +1283,510 @@
 		},
 		{
 			"name": "IngresoBodega",
-			"item": []
-		},
-		{
-			"name": "tienda",
-			"item": []
+			"item": [
+				{
+					"name": "addBodega",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNTYyMjMsImV4cCI6MTc0MTM1OTgyM30.Cnhq6hqzQPQlnHmGF0qwBlv01c_1U5j_o5_V2zVgsWI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"encargadoIngreso\": \"jAVIER\",\r\n    \"productos\": [\r\n        {\r\n            \"id\": \"67c8b177d946d54aea7dfa4b\",\r\n            \"cantProducto\": 50            \r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/tienda/bodegaAdd",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"tienda",
+								"bodegaAdd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addBodega Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNTYyMjMsImV4cCI6MTc0MTM1OTgyM30.Cnhq6hqzQPQlnHmGF0qwBlv01c_1U5j_o5_V2zVgsWI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"encargadoIngreso\": \"JAVIER\",\r\n    \"productos\": [\r\n        {\r\n            \"id\": \"67c8b180d946d54aea7dfa51\",\r\n            \"cantProducto\": 50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/tienda/bodegaEdit/67caff66d55b670ca6722eb8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"tienda",
+								"bodegaEdit",
+								"67caff66d55b670ca6722eb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNTYyMjMsImV4cCI6MTc0MTM1OTgyM30.Cnhq6hqzQPQlnHmGF0qwBlv01c_1U5j_o5_V2zVgsWI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"encargadoIngreso\": \"JAVIER\",\r\n    \"productos\": [\r\n        {\r\n            \"id\": \"67c8b180d946d54aea7dfa51\",\r\n            \"cantProducto\": 50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/tienda/listporId/67caff66d55b670ca6722eb8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"tienda",
+								"listporId",
+								"67caff66d55b670ca6722eb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNTYyMjMsImV4cCI6MTc0MTM1OTgyM30.Cnhq6hqzQPQlnHmGF0qwBlv01c_1U5j_o5_V2zVgsWI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"encargadoIngreso\": \"JAVIER\",\r\n    \"productos\": [\r\n        {\r\n            \"id\": \"67c8b180d946d54aea7dfa51\",\r\n            \"cantProducto\": 50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/tienda/listBodega",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"tienda",
+								"listBodega"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzNmYjcyMzI4MTI4NGE3NjIxNTMiLCJpYXQiOjE3NDEzNTYyMjMsImV4cCI6MTc0MTM1OTgyM30.Cnhq6hqzQPQlnHmGF0qwBlv01c_1U5j_o5_V2zVgsWI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"encargadoIngreso\": \"JAVIER\",\r\n    \"productos\": [\r\n        {\r\n            \"id\": \"67c8b180d946d54aea7dfa51\",\r\n            \"cantProducto\": 50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/tienda/deleteProduct/67c9fad361991b55afea700b",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"tienda",
+								"deleteProduct",
+								"67c9fad361991b55afea700b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Carrito",
-			"item": []
+			"item": [
+				{
+					"name": "addCarrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzQxNjcyMzI4MTI4NGE3NjIxNWYiLCJpYXQiOjE3NDEzNTg2ODEsImV4cCI6MTc0MTM2MjI4MX0.DOBJV0czsjc_DqP-JuRpk3tHrLv1E2_zHg3GbuZLhNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productos\": [\r\n        {\r\n            \"productoId\": \"67c8b180d946d54aea7dfa51\", \r\n            \"cantidad\": 2000000\r\n        },\r\n        {\r\n            \"productoId\": \"67c8b177d946d54aea7dfa4b\",\r\n            \"cantidad\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/carrito/agregarCarrito/67c63416723281284a76215f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"carrito",
+								"agregarCarrito",
+								"67c63416723281284a76215f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "facturaCarrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzQxNjcyMzI4MTI4NGE3NjIxNWYiLCJpYXQiOjE3NDEzNTg2ODEsImV4cCI6MTc0MTM2MjI4MX0.DOBJV0czsjc_DqP-JuRpk3tHrLv1E2_zHg3GbuZLhNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nit\": \"1640010\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/carrito/factura/67cb0738ea61a6611353369e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"carrito",
+								"factura",
+								"67cb0738ea61a6611353369e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCarrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzQxNjcyMzI4MTI4NGE3NjIxNWYiLCJpYXQiOjE3NDEzNTg2ODEsImV4cCI6MTc0MTM2MjI4MX0.DOBJV0czsjc_DqP-JuRpk3tHrLv1E2_zHg3GbuZLhNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productos\": [\r\n        {\r\n            \"productoId\": \"67c8b180d946d54aea7dfa51\", \r\n            \"cantidad\": 2000000\r\n        },\r\n        {\r\n            \"productoId\": \"67c8b177d946d54aea7dfa4b\",\r\n            \"cantidad\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/carrito/updateCarrito/67c63416723281284a76215f/67cb0738ea61a6611353369e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"carrito",
+								"updateCarrito",
+								"67c63416723281284a76215f",
+								"67cb0738ea61a6611353369e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCarri",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzQxNjcyMzI4MTI4NGE3NjIxNWYiLCJpYXQiOjE3NDEzNTg2ODEsImV4cCI6MTc0MTM2MjI4MX0.DOBJV0czsjc_DqP-JuRpk3tHrLv1E2_zHg3GbuZLhNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/carrito/cancelarCarrito/67cb0738ea61a6611353369e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"carrito",
+								"cancelarCarrito",
+								"67cb0738ea61a6611353369e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listartodosActivos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzQxNjcyMzI4MTI4NGE3NjIxNWYiLCJpYXQiOjE3NDEzNTg2ODEsImV4cCI6MTc0MTM2MjI4MX0.DOBJV0czsjc_DqP-JuRpk3tHrLv1E2_zHg3GbuZLhNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productos\": [\r\n        {\r\n            \"productoId\": \"67c8b180d946d54aea7dfa51\", \r\n            \"cantidad\": 2 \r\n        },\r\n        {\r\n            \"productoId\": \"67c8b177d946d54aea7dfa4b\",\r\n            \"cantidad\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/carrito/carritosUserActivos/67c63416723281284a76215f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"carrito",
+								"carritosUserActivos",
+								"67c63416723281284a76215f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "historialCarrito",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MzQxNjcyMzI4MTI4NGE3NjIxNWYiLCJpYXQiOjE3NDEzNjQzMzQsImV4cCI6MTc0MTM2NzkzNH0.87e3ot9he2kALMjGvIDtxWnCZ6K0GXvgp5CUTzLNvA0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productos\": [\r\n        {\r\n            \"productoId\": \"67c8b180d946d54aea7dfa51\", \r\n            \"cantidad\": 2 \r\n        },\r\n        {\r\n            \"productoId\": \"67c8b177d946d54aea7dfa4b\",\r\n            \"cantidad\": 3\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3005/tiendaWeb/v1/carrito/listCarrtiosUser/67c63416723281284a76215f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"tiendaWeb",
+								"v1",
+								"carrito",
+								"listCarrtiosUser",
+								"67c63416723281284a76215f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
