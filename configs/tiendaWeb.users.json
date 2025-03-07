@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "67c633fb723281284a762153"
+  },
+  "apellidos": "Cordova Ruiz",
+  "nombres": "Luis Rafael",
+  "userName": "LC2020429",
+  "email": "lcordova-2020429@kinal.edu.gt",
+  "profilePicture": null,
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$E6DR67MlI3gVjasdNd4wKA$f5SkxR1BYsNFQBHGDBsIeqhsBJpGE+xOZBoJpJncup4",
+  "role": "ADMIN",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-03T22:58:03.763Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-03T22:58:03.763Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c6340f723281284a762157"
+  },
+  "apellidos": "Herrera Perez",
+  "nombres": "Javier Eduardo",
+  "userName": "Zodiacal",
+  "email": "jherrera-2020439@kinal.edu.gt",
+  "profilePicture": null,
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ORE48DlSs5yjdj9YwyGQow$GVNjnpJTxSkfUrpqMn62D2Oi6qFi71kj4WVOWniMJbU",
+  "role": "ADMIN",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-03T22:58:23.494Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-03T22:58:23.494Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c63412723281284a76215b"
+  },
+  "apellidos": "Ruiz",
+  "nombres": "Monica Susana",
+  "userName": "Monik-a",
+  "email": "Monik@kinal.edu.gt",
+  "profilePicture": null,
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$kcCHuJhj6GLH0XJ1tPt9gw$hKEKvm9qO/MG40P8DNp+0SssGG4RZp3FBJ9x9MeIsj4",
+  "role": "USER",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-03T22:58:26.916Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-03T22:58:26.916Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c63416723281284a76215f"
+  },
+  "apellidos": "Cristel",
+  "nombres": "Alesandra",
+  "userName": "ale",
+  "email": "ale@gmail.com",
+  "profilePicture": null,
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$7CI3BwOWk69KQZdinS8bFA$T8vlLCqk6jCNnKeynyqWsV89ua1Og/n+Zapfdla9hkU",
+  "role": "USER",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-03T22:58:30.549Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-03T22:58:30.549Z"
+  }
+}]

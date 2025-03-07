@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "67c9fad361991b55afea700b"
+  },
+  "encargadoIngreso": "lolol",
+  "product": {
+    "$oid": "67c8b180d946d54aea7dfa51"
+  },
+  "cantProducto": 50,
+  "status": "ACTIVO",
+  "exisistencia": "EXISTENCIAS",
+  "fechaIngreso": {
+    "$date": "2025-03-06T19:43:15.716Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-06T19:43:15.719Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T21:16:03.903Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c9fcd61503019c6503d69e"
+  },
+  "encargadoIngreso": "Juan Gonzalo",
+  "product": {
+    "$oid": "67c8b180d946d54aea7dfa51"
+  },
+  "cantProducto": 50,
+  "status": "ACTIVO",
+  "exisistencia": "EXISTENCIAS",
+  "fechaIngreso": {
+    "$date": "2025-03-06T19:51:50.668Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-06T19:51:50.671Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T19:51:50.671Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca002efe5ef1b6f902fc95"
+  },
+  "encargadoIngreso": "Juan Gonzalo",
+  "product": {
+    "$oid": "67c8b180d946d54aea7dfa51"
+  },
+  "cantProducto": 50,
+  "status": "ACTIVO",
+  "exisistencia": "EXISTENCIAS",
+  "fechaIngreso": {
+    "$date": "2025-03-06T20:06:06.490Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-06T20:06:06.494Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T20:06:06.494Z"
+  }
+}]

@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "67c8b177d946d54aea7dfa4b"
+  },
+  "nombreProducto": "rauqueta pingpong",
+  "precio": 250,
+  "descripcionEspecificaP": "raqueta premium mappa",
+  "categoriaProducto": {
+    "$oid": "67c6359a9cca4a44faa3a8c2"
+  },
+  "ventas": 0,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8b180d946d54aea7dfa51"
+  },
+  "nombreProducto": "pingpong mechanic",
+  "precio": 350,
+  "descripcionEspecificaP": "raqueta premium  mechanica mappa",
+  "categoriaProducto": {
+    "$oid": "67c6359a9cca4a44faa3a8c2"
+  },
+  "ventas": 150,
+  "status": true
+}]

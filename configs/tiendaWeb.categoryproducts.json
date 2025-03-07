@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "67c6359a9cca4a44faa3a8c2"
+  },
+  "nombreCategoria": "Default",
+  "descripcionCategoria": "Productos varios",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c635b20e9cf5013718674a"
+  },
+  "nombreCategoria": "Deportes",
+  "descripcionCategoria": "Articulos deportivos",
+  "status": false
+},
+{
+  "_id": {
+    "$oid": "67c635d60e9cf50137186750"
+  },
+  "nombreCategoria": "Limpieza",
+  "descripcionCategoria": "Categoría eliminada",
+  "status": false
+},
+{
+  "_id": {
+    "$oid": "67c635df0e9cf50137186754"
+  },
+  "nombreCategoria": "Jueguetes",
+  "descripcionCategoria": "Juegos",
+  "status": true
+}]
